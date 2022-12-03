@@ -2,7 +2,7 @@ function computerPlay() {
     const gameElements = ["rock", "paper", "scissors"]
     let selectIndex = randomGenerator(3)
     //console.log(selectIndex)
-    return gameElemnts[selectIndex]
+    return gameElements[selectIndex]
 }
 
 function randomGenerator(max) {
