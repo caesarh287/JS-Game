@@ -1,12 +1,12 @@
 function computerPlay() {
-    const gameElems = ["rock", "paper", "scissors"]
+    const gameElements = ["rock", "paper", "scissors"]
     let selectIndex = randomGenerator(3)
     //console.log(selectIndex)
-    return gameElems[selectIndex]
+    return gameElemnts[selectIndex]
 }
 
-function randomGenerator(rangeEnd) {
-    return Math.round(Math.random() * 10) % rangeEnd
+function randomGenerator(max) {
+    return Math.round(Math.random() * 10) % max
 }
 
 function playRound(playerSelection, computerSelection) {
