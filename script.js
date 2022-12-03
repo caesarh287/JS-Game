@@ -71,7 +71,7 @@ function game() {
         let playerSelection = prompt("Please enter your choice (Rock/Paper/Scissors) :")
         if (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
             i--
-            alert('Invalid answer, please try again.')
+            alert('Invalid input, please try again.')
         }
         else {
             let computerSelection = computerPlay()
