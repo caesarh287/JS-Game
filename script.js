@@ -12,7 +12,10 @@ function randomGenerator(max) {
 }
 
 function playRound(playerSelection, computerSelection) {
-
+    if (playerSelection.toLowerCase() === "") {
+        alert('Empty value, please try again.')
+        return 2
+    }
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
         console.log("You win! Rock beats Scissors")
         return 1
@@ -57,7 +60,10 @@ function playRound(playerSelection, computerSelection) {
         console.log("It is a tie! Keep on trying.")
         return 0
     }
-
+    else {
+        alert('Invalid input, please try again.')
+        return 2
+    }
 }
 
 
@@ -68,14 +74,13 @@ function game() {
     let tieScore = 0
 
     for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Please enter your choice (Rock/Paper/Scissors) :")
-        if (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
+        let playerSelection = prompt("Please enter your choice (Rock/Paper/Scissors) :");
+        let computerSelection = computerPlay()
+        score = playRound(playerSelection.trim(), computerSelection)
+        if (score === 2) {
             i--
-            alert('Invalid input, please try again.')
         }
         else {
-            let computerSelection = computerPlay()
-            score = playRound(playerSelection.trim(), computerSelection)
             if (score > 0)
                 ++playerScore
             if (score === 0)
@@ -85,6 +90,7 @@ function game() {
             console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} TieScore: ${tieScore}`)
         }
     }
+
     if (playerScore > computerScore) {
         console.log("You WON!")
     }
