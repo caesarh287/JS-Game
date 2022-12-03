@@ -69,7 +69,7 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Please enter your choice (Rock/Paper/Scissors) :")
-        if (playerSelection.trim() !== 'rock' && playerSelection.trim() !== 'paper' && playerSelection.trim() !== 'scissors') {
+        if (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
             i--
             alert('Invalid answer, please try again.')
         }
